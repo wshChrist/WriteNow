@@ -7,11 +7,11 @@ Prototype d'autocorrecteur global pour Windows.
 1. Installer les dépendances :
 
    ```bash
-   pip install keyboard language_tool_python
+   pip install keyboard pyspellchecker
    ```
 
 2. Exécuter le script `autocorrect.py`.
 
-3. Tapez du texte dans n'importe quelle application : à chaque espace ou ponctuation, le mot précédent est analysé et corrigé automatiquement.
+3. Tapez du texte dans n'importe quelle application : à chaque appui sur la barre d'espace, le mot précédent est comparé à un dictionnaire local et éventuellement remplacé par la meilleure suggestion.
 
-Le script repose sur [LanguageTool](https://languagetool.org/) pour la correction en français et utilise la bibliothèque `keyboard` pour intercepter les frappes.
+Le script utilise la bibliothèque `keyboard` pour intercepter les frappes et [`pyspellchecker`](https://github.com/barrust/pyspellchecker) pour la recherche de la correction la plus probable sans appel à un service externe.
